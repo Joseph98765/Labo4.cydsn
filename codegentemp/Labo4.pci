@@ -1,5 +1,5 @@
 # Labo4
-# 2021-03-10 21:12:17Z
+# 2021-03-11 02:07:59Z
 
 dont_use_location p4usbcell -1 -1 0
 dont_use_location USB -1 -1 0
@@ -8,3 +8,6 @@ set_location "ClockGenBlock" CLK_GEN -1 -1 0
 set_io "CY_CPUSS_SWJ_SWCLK_TCLK(0)" iocell 6 7
 set_io "CY_CPUSS_SWJ_SWDIO_TMS(0)" iocell 6 6
 set_io "LED(0)" iocell 1 1
+set_io "\UART:tx(0)\" iocell 5 1
+set_io "\UART:rx(0)\" iocell 5 0
+set_io "BOUTON(0)" iocell 0 4

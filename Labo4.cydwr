@@ -6,6 +6,9 @@
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
+      <Data key="34b131c1-67eb-45a2-9d41-9590c54e6d4c" value="Bouton" />
+      <Data key="737a4e0f-3880-4182-aaa7-e2163a855a8c/65f3af6c-759b-4ccb-8c66-5c95ba1f5f4f" value="UART_tx" />
+      <Data key="737a4e0f-3880-4182-aaa7-e2163a855a8c/b7e8018e-1ef7-49c0-b5a5-61641a03e31c" value="UART_rx" />
       <Data key="0113321b-4a37-46f6-8407-2f8646c68756" value="LED" />
     </Group>
   </Group>
@@ -594,6 +597,21 @@
     </Group>
   </Group>
   <Group key="Pin2">
+    <Group key="34b131c1-67eb-45a2-9d41-9590c54e6d4c">
+      <Group key="0">
+        <Data key="Port Format" value="0,4" />
+      </Group>
+    </Group>
+    <Group key="737a4e0f-3880-4182-aaa7-e2163a855a8c/65f3af6c-759b-4ccb-8c66-5c95ba1f5f4f">
+      <Group key="0">
+        <Data key="Port Format" value="5,1" />
+      </Group>
+    </Group>
+    <Group key="737a4e0f-3880-4182-aaa7-e2163a855a8c/b7e8018e-1ef7-49c0-b5a5-61641a03e31c">
+      <Group key="0">
+        <Data key="Port Format" value="5,0" />
+      </Group>
+    </Group>
     <Group key="0113321b-4a37-46f6-8407-2f8646c68756">
       <Group key="0">
         <Data key="Port Format" value="1,1" />

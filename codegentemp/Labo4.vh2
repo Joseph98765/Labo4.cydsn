@@ -2,7 +2,7 @@
 --	Conversion of Labo4.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Mar 10 21:07:53 2021
+--	Fri Mar 19 20:35:10 2021
 --
 
 USE cypress.cypress.all;

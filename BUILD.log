@@ -1,18 +1,32 @@
---------------- Build Started: 03/22/2021 17:57:07 Project: Labo4, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 03/22/2021 18:24:20 Project: Labo4, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 The compile step is up to date, no work needs to be done.
 The link step is up to date, no work needs to be done.
 arm-none-eabi-gcc.exe -mcpu=cortex-m4 -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -I. -IGenerated_Source\PSoC6 -IGenerated_Source\PSoC6\pdl\cmsis/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/include/ip/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/device/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/efuse/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/flash/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/gpio/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ipc/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/lvd/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/profile/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/prot/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/scb/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysanalog/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysclk/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysint/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/syslib/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/syspm/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/systick/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/trigmux/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/wdt/ -IGenerated_Source\PSoC6\pdl\middleware/ -IGenerated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/include/ -IGenerated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/portable/GCC/CM4F/ -Wa,-alh=.\CortexM4\ARM_GCC_541\Debug/main_cm4.lst -g -D DEBUG -D CY_CORE_ID=0 -D CY_PSOC_CREATOR_USED=1 -D CY8C6347BZI_BLD53 -Wall -ffunction-sections -ffat-lto-objects -Og -c main_cm4.c -o .\CortexM4\ARM_GCC_541\Debug\main_cm4.o
 In file included from Generated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/include/FreeRTOS.h:56:0,
-                 from main_cm4.c:13:
+                 from main_cm4.c:11:
 ./FreeRTOSConfig.h:45:2: warning: #warning This is a template. Modify it according to your project and remove this line. [-Wcpp]
  #warning This is a template. Modify it according to your project and remove this line. 
   ^
 main_cm4.c: In function 'main':
-main_cm4.c:114:17: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+main_cm4.c:177:17: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+     xTaskCreate(LED_task, "LED", 500, NULL, 2, NULL);
+                 ^
+In file included from main_cm4.c:12:0:
+Generated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/include/task.h:321:13: note: expected 'TaskFunction_t {aka void (*)(void *)}' but argument is of type 'void (*)(void)'
+  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+             ^
+main_cm4.c:192:17: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+     xTaskCreate(bouton_task, "BOUTON", 500, NULL, 2, NULL);
+                 ^
+In file included from main_cm4.c:12:0:
+Generated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/include/task.h:321:13: note: expected 'TaskFunction_t {aka void (*)(void *)}' but argument is of type 'void (*)(void)'
+  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+             ^
+main_cm4.c:195:17: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
      xTaskCreate(print, "print", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
                  ^
-In file included from main_cm4.c:14:0:
+In file included from main_cm4.c:12:0:
 Generated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/include/task.h:321:13: note: expected 'TaskFunction_t {aka void (*)(void *)}' but argument is of type 'void (*)(void)'
   BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
              ^
@@ -26,4 +40,4 @@ Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 "C:\Program Files (x86)\Cypress\PDL\3.1.3\tools\win\elf\cymcuelftool.exe" -A C:\Users\jlabe\Desktop\H21\GBM2100_Projet\Labo4\Labo4.cydsn\CortexM4\ARM_GCC_541\Debug\Labo4.elf
 code:25788	sram:12988
---------------- Build Succeeded: 03/22/2021 17:57:10 ---------------
+--------------- Build Succeeded: 03/22/2021 18:24:27 ---------------

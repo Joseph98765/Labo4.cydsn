@@ -23,7 +23,7 @@ volatile task_params_t task_A = {
     .message = "Tache A en cours\n\r"
 };
 volatile task_params_t task_B = {
-    .delay = 900,
+    .delay = 999,
     .message = "Tache B en cours\n\r"
 };
 volatile QueueHandle_t print_queue;
@@ -73,20 +73,24 @@ void print_loop(void * params)
     for (;;)
     {
         vTaskDelay(tache_en_cours->delay);
-        UART_PutString(tache_en_cours->message);
+        //UART_PutString(tache_en_cours->message);
         //xQueueSendToBack(print_queue, tache_en_cours->message, tache_en_cours->delay);
+        char * message = tache_en_cours->message;
+        xQueueSend(print_queue, &message, 0);
     }
 }
 
-//void print()
-//{
-    //char * message;
-    //for(;;)
-    //{
-        //xQueueReceive(print_queue, &message, portMAX_DELAY);
-        //UART_PutString(message);
-    //}
-//}
+void print(void)
+{
+    char * message;
+    for(;;)
+    {
+        if (xQueueReceive(print_queue, &message, portMAX_DELAY) == pdTRUE)
+        {
+            UART_PutString(message);
+        }
+    }
+}
 
 int main(void)
 {
@@ -107,7 +111,7 @@ int main(void)
     
     xTaskCreate(print_loop, "task A", configMINIMAL_STACK_SIZE, (void *) &task_A, 1, NULL);
     xTaskCreate(print_loop, "task B", configMINIMAL_STACK_SIZE, (void *) &task_B, 1, NULL);
-    //xTaskCreate(print, "print", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
+    xTaskCreate(print, "print", configMINIMAL_STACK_SIZE, NULL, 0, NULL);
     
     vTaskStartScheduler();
 
